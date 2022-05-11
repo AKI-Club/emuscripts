@@ -1,0 +1,54 @@
+freem presents:
+virtual pro-wrestling 2 lazy moves and parameters dumper
+for project64 2.4.x or later, as long as you have debugging tools enabled
+=========================================================================
+ok look I'm in a rush here because I'm happy this works, so the gory details
+are later in the document. here's the quick runthrough.
+
+this archive contains 3 files.
+one of them is this text file.
+
+memdump.js is a generic memory dumper for project64.
+
+moveparam_vpw2.html is an interface for dumping vpw2 moves and parameters,
+which uses the above memdump.js to do the dirty work.
+
+okay, that's out of the way, I hope.
+
+[INSTALLATION]
+1) create a Scripts folder where Project64.exe lives.
+2) extract memdump.js to the scripts folder.
+3) put moveparam_vpw2.html wherever you want.
+
+[USAGE]
+1) open project64
+2) load vpw2
+3) start a match with the wrestlers you want to dump data for
+4) go to debugger > scripts
+5) either double click on memdump.js, or right click memdump.js and choose run
+6) open memdump.html in a browser and click links to "download" moves and param data.
+
+awesome, now I don't need to keep writing the same addresses over and over again!
+
+[DETAILS ON MEMDUMP]
+memdump.js is a script for Project64 that allows for simple memory dumping.
+"Why not use the Dump Memory window?" you might ask... I got tired of writing
+the same start and ending addresses in the boxes. Unlike the Dump Memory window,
+memdump does not support using an alternate PC (program counter), so if you need
+that functionality, this isn't a replacement for you.
+
+usage, the short version:
+"start" - memory dump start address
+"end"   - memory dump end address
+"filename" (optional) - filename to dump data to (defaults to "output.bin")
+ONLY USE HEX ADDRESSES OR I'LL PUNCH YA
+
+e.g. http://localhost/?start=80000000&end=80000040&filename=dump.bin
+
+[QUESTION THING]
+"what happens if I make the start address larger than the end address?"
+don't do that.
+
+"how do I expand this to work for [x game]?"
+copy the html file, edit the start and end addresses, and uh...
+maybe change the layout if you're not hacking an AKI wrestling game.
